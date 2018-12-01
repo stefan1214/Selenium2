@@ -13,11 +13,11 @@ def loggingBotAccount():
         driver.find_element_by_id("goToLink").click()
     except NoSuchElementException:
         print("Długa ta reklama")
-    try:
-        driver.find_element_by_xpath(
-            "(.//*[normalize-space(text()) and normalize-space(.)='REKLAMA:'])[1]/preceding::button[1]").click()
-    except ArithmeticError:
-        print("Długa ta reklama")
+    # try:
+    #     driver.find_element_by_xpath(
+    #         "(.//*[normalize-space(text()) and normalize-space(.)='REKLAMA:'])[1]/preceding::button[1]").click()
+    # except ArithmeticError:
+    #     print("Długa ta reklama")
     except NoSuchElementException:
         print("Długa ta reklama")
     driver.find_element_by_xpath(
@@ -44,7 +44,7 @@ def openUserWantToSeePage():
     j=2
     while True:
         try:
-            sleep(2000)
+            time.sleep(2)
             print(driver.find_elements_by_class_name("filmPreview__title")[i].text+";")
             print(driver.find_elements_by_class_name("filmPreview__originalTitle")[i].text+";")
             print(driver.find_elements_by_class_name("filmPreview__year")[i].text+";")
